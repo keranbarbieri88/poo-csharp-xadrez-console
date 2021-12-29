@@ -4,6 +4,7 @@ using System.Text;
 
 namespace tabuleiro
 {
+    //tipo enumerado
     enum Cor
     {
         Branca,
