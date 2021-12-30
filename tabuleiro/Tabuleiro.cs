@@ -29,13 +29,51 @@ namespace tabuleiro
         {
             return pecas[linha, coluna];
         }
+         
+        //método de sobrecarga
+        public Peca peca(Posicao pos)
+        {
+            return pecas[pos.linha, pos.coluna];
+        }
 
-        // método que coloca uma peça no tabuleiro, acesso a matriz peças passando a linha e a coluna que recebe a peça p.
-        //e peça p recebe a posição pos.
+        // método que verifica se há peça na posição, caso não, coloca uma peça no tabuleiro,
+        // acesso a matriz peças passando a linha e a coluna que recebe a peça p e peça p recebe a posição pos.
         public void colocarPeca(Peca p, Posicao pos)
         {
+            if (existePeca(pos))
+            {
+                throw new TabuleiroException("Já existe uma peça nesta posição!");
+            }
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
+        }
+               
+        //método que testa se a posição é válida
+        public bool posicaoValida(Posicao pos)
+        {
+            if (pos.linha<0 || pos.linha>=linhas || pos.coluna<0 || pos.coluna >= colunas)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        //método que verifica se há peça na posição escolhida e antes passa pelo método que testa se a poisção é válida.
+        public bool existePeca(Posicao pos)
+        {
+            validarPosicao(pos);
+            return peca(pos) != null;
+        }
+
+        //método de tratamento de exceção
+        public void validarPosicao(Posicao pos)
+        { 
+            //se a posição não for válida é lançada a exceção
+            if (!posicaoValida(pos))
+            {
+                throw new TabuleiroException("Posição inválida!");
+            }
+
         }
     }
 }
