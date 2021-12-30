@@ -19,13 +19,14 @@ namespace xadrez_console
                     if (tab.peca(i,j)==null)
                     {
                         Console.Write("- ");
-                    } // se não, acessará o métod e imprimirá a peça.                   
+                    } // se não, acessará o método e imprimirá a peça.                   
                     else
                     {
                         //acesso a peça, chamando o método peça no objeto tab, linha i, coluna j.
-                        Console.WriteLine(tab.peca(i, j) + " ");
+                        Console.Write(tab.peca(i, j) + " ");
                     }                    
                 }
+                //pula uma linha
                 Console.WriteLine();
             }
         }

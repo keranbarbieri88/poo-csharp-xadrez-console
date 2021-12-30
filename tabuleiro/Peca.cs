@@ -16,10 +16,11 @@ namespace tabuleiro
 
         //construtor que recebe por parâmentro Posicao, Tabuleiro, Cor e autorreferência (palavra this é uma referência
         //para o próprio objeto) que armazena nas variáveis o valor informado como argumento.
-        //qteMovimentos inicia-se em 0 por isso não foi passada como parâmentro.
-        public Peca(Posicao posicao, Tabuleiro tab, Cor cor)
+        //posição inicia-se nula e qteMovimentos inicia-se em 0 por isso não foram passadas como parâmentro.
+        //associação - a peça tem um tabuleiro.
+        public Peca(Tabuleiro tab, Cor cor)
         {
-            this.posicao = posicao;
+            this.posicao = null;
             this.tab = tab;
             this.cor = cor;
             this.qteMovimentos = 0;

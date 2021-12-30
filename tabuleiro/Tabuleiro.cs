@@ -24,9 +24,18 @@ namespace tabuleiro
         }
 
         //método que permite acesso a uma peça indivídual, recebe como parâmentro/argumento linha e coluna.
+        //associação - o tabuleiro tem várias peças.
         public Peca peca(int linha, int coluna)
         {
             return pecas[linha, coluna];
+        }
+
+        // método que coloca uma peça no tabuleiro, acesso a matriz peças passando a linha e a coluna que recebe a peça p.
+        //e peça p recebe a posição pos.
+        public void colocarPeca(Peca p, Posicao pos)
+        {
+            pecas[pos.linha, pos.coluna] = p;
+            p.posicao = pos;
         }
     }
 }
