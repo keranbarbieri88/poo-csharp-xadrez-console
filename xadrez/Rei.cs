@@ -2,7 +2,8 @@
 
 namespace xadrez
 {
-    //Subclasse de Peça (herança)
+    //Subclasse de Peça
+    //
     class Rei : Peca
     {
         //construtor da peça Rei (objeto) que repassa as instruções, para a classe Peça
