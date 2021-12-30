@@ -1,5 +1,7 @@
 ﻿using System;
 using tabuleiro;
+using xadrez;
+
 
 namespace xadrez_console
 {
@@ -34,6 +36,15 @@ namespace xadrez_console
             }
             //imprime as letras-guias do tabuleiro
             Console.WriteLine(" a b c d e f g h");
+        }
+
+        //método que irá ler do teclado o que o usuário digitar
+        public static PosicaoXadrez lerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna  = s[0];
+            int linha = int.Parse(s[1] + "");
+            return new PosicaoXadrez(coluna, linha);
         }
 
         //método estático que vai trocar a cor Preta das peças por Amarelo, pois o fundo do console é preto

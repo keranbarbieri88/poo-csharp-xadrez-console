@@ -45,6 +45,22 @@ namespace tabuleiro
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
         }
+
+        //método que retira peça de uma dada posição
+        public Peca retirarPeca(Posicao pos)
+        {
+            //se não houver peça, não retira nada e retornará nulo
+            if (peca(pos) == null)
+            {
+                return null;
+            }
+            //variável auxiliar que recebe a peça que está na posição informada, e retira a peça, retornando nulo
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
+
+        }
                
         //método que testa se a posição é válida
         public bool posicaoValida(Posicao pos)
