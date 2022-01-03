@@ -18,6 +18,12 @@ namespace tabuleiro
             this.coluna = coluna;
         }
 
+        //método que define valores da posição
+        public void definirValores(int linha, int coluna)
+        {
+
+        }
+
         //método ToString converte um objeto em sua representação de cadeia de caracteres
         //para que ele seja adequado para exibição (sobreposição).
         public override string ToString()

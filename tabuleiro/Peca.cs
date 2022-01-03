@@ -1,9 +1,10 @@
 ﻿using System;
+using xadrez;
 
 
 namespace tabuleiro
 {
-    class Peca
+    abstract class Peca
     {
         //uma peça possui uma posição que pode ser acessada e alterada por outras classes,
         //uma cor, quantidade de movimentos e Tabuleiro que podem ser acessados por outras classes, mas
@@ -30,5 +31,9 @@ namespace tabuleiro
         {
             qteMovimentos++;
         }
+
+        //método que não tem implementação nesta classe, e sim em cada classe de peça, pois representará os movimentos que
+        //cada peça pode fazer.
+        public abstract bool[,] movimentosPossiveis();
     }
 }

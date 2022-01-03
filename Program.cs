@@ -9,7 +9,7 @@ namespace xadrez_console
         static void Main(string[] args)
         {
             //tendo executar
-            try 
+            try
             {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
 
@@ -22,20 +22,24 @@ namespace xadrez_console
                     Console.WriteLine();
                     Console.Write("Origem: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+
+                    bool[,] posicoesPossiceis = partida.tab.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab, posicoesPossiceis);
+
+                    Console.WriteLine();
                     Console.Write("Destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
                     partida.executeMovimento(origem, destino);
                 }
-
-                Tela.imprimirTabuleiro(partida.tab);
             }
             //se der algum erro, informo por mensagem
-            catch (TabuleiroException e) 
+            catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
             }
-           
             Console.ReadLine();
         }
     }

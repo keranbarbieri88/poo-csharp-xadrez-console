@@ -3,7 +3,7 @@
 namespace tabuleiro
 {
     class Tabuleiro
-    {   
+    {
         //variáveis.
         public int linhas { get; set; }
         public int colunas { get; set; }
@@ -27,7 +27,7 @@ namespace tabuleiro
         {
             return pecas[linha, coluna];
         }
-         
+
         //método de sobrecarga
         public Peca peca(Posicao pos)
         {
@@ -59,13 +59,12 @@ namespace tabuleiro
             aux.posicao = null;
             pecas[pos.linha, pos.coluna] = null;
             return aux;
-
         }
-               
+
         //método que testa se a posição é válida
         public bool posicaoValida(Posicao pos)
         {
-            if (pos.linha<0 || pos.linha>=linhas || pos.coluna<0 || pos.coluna >= colunas)
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
             {
                 return false;
             }
@@ -81,13 +80,12 @@ namespace tabuleiro
 
         //método de tratamento de exceção
         public void validarPosicao(Posicao pos)
-        { 
+        {
             //se a posição não for válida é lançada a exceção
             if (!posicaoValida(pos))
             {
                 throw new TabuleiroException("Posição inválida!");
             }
-
         }
     }
 }

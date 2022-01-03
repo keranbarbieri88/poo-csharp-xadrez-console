@@ -16,20 +16,16 @@ namespace xadrez
             this.coluna = coluna;
             this.linha = linha;
         }
-
+        
         //método que converte a posição do xadrez para uma posição interna da matriz
         public Posicao toPosicao()
         {
             return new Posicao(8 - linha, coluna - 'a');
         }
 
-
-
         public override string ToString()
         {
             return "" + coluna + linha;
         }
     }
-
-  
 }
